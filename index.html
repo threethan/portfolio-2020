@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Ethan Medeiros Homepage</title>
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="common.js"></script>
+</head>
+<body>
+	<div id="top-nav">
+		<!--img src="LogoE.svg" alt="logo"-->
+		<h1> Ethan Medeiros,
+		<a id="nav-menu" href="javascript:showDd();">
+			<span id="nav-menu-text"> Designer </span>
+			<span id="nav-menu-arrow"> </span>
+		</a>
+		</h1>
+	</div>
+	<div id="nav-dd" class="hidden">
+		<div id="nav-dd-option0" class="nav-dd-option" style="order:1;"> <a href="javascript:switchPage(0)">
+			Designer
+		</a> </div>
+		<div id="nav-dd-option1" class="nav-dd-option" style="order:2;"> <a href="javascript:switchPage(1)">
+			Developer
+		</a> </div>
+		<div id="nav-dd-option2" class="nav-dd-option" style="order:2;"> <a href="javascript:switchPage(2)">
+			Mentor
+		</a> </div>
+	</div>
+	<div id="top-nav-spacer"></div>
+
+
+	<div id="page0" class="page-wrapper">
+		<div w3-include-html="designer.html"></div>
+	</div>
+	<div id="page1" class="page-wrapper">
+		<div w3-include-html="developer.html"></div>
+	</div>
+	<div id="page2" class="page-wrapper">
+		This is page 3 (2)
+	</div>
+	<script>
+		includeHTML();
+	</script>
+</body>
+</html>
