@@ -17,20 +17,13 @@ $(window).resize(function() {
 });
 
 function updateParallax() {
-	$(".parallax").each(function() {
-		vars = this.dataset.px.split(',');
-		Ypos = parseInt(vars[1])/100;
-		spdM = 1-parseFloat(vars[2]);
-
-		offset = parseInt($(this).parent().css("top"));
-		//offset = parseFloat(vars[3]);
-		scroll = ($(window).scrollTop() / window.innerWidth) - offset;
-		console.log(scroll);
-		scroll *= 5;
-
-		$(this).css("left", "calc("+parseFloat(vars[0])+"% - "+this.offsetWidth/2+"px)");
-		$(this).css("top", "calc("+((scroll*spdM+Ypos))+"vw - "+this.offsetHeight/2+"px)");
-
+	$('.parallax').each( function() {
+		elem = this;
+		screenSpacePos = ($(elem).offset().top + $(elem).height()/2) - $(document).scrollTop();
+		console.log('a');
+		displayPos = screenSpacePos-window.innerHeight/2;
+		displayPos *= parseFloat($(elem).data('px'));
+		$(elem).css('margin-top', displayPos/10 +'vw');
 	});
 }
 
