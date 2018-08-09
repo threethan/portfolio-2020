@@ -1,6 +1,14 @@
+:root {
+	--design-scale-amount: 0.5;
+	--gc1: #3B8DDF; --gc2: #7BCDFF;
+	/* --gc1: white; --gc2: black; */
+	--background-dark: linear-gradient(0deg, var(--gc1) 0vh, var(--gc2) 150vh);
+	--background-dark-scaled: linear-gradient(white, white);
+	//--background-dark: white;
+}
 
 #scroll-attract {
-	position: absolute;
+	position: fixed;
 	width: 100%;
 	display: block;
 	text-align: center;
@@ -51,9 +59,9 @@
 
 .label h1{
 	display: block;
-	color: white;//var(--accent-color);
 	font-family: LemonMilk, sans-serif;
-  text-shadow: 0.5vw 0.5vw #353535;
+	color: var(--accent-color);
+	text-shadow: 0.5vw 0.5vw #CCC;
 
 	font-size: 7.5vw;
 	line-height: 7.5vw;
@@ -75,23 +83,23 @@
   border-radius: 10px;
   left: 12.5%;
   width: 70%;
-}
-
-.mask {
-  background: var(--background-dark);
-  background-attachment: fixed;
+	background-color: var(--text-background);
 }
 
 #header {
   box-shadow: none;
-  background: var(--text-background);
+  background-color: var(--text-background);
   z-index: 1;
   left: 5%;
   width: 85%;
 }
 #header h1 {
-  color: var(--accent-color);
-  text-shadow: none;
+	color: var(--text-color);
+	text-shadow: none;
+}
+#header h1 span {
+	color: var(--accent-color);
+	text-shadow: 0.5vw 0.5vw #CCC;
 }
 
 .design-show.label {
@@ -111,16 +119,16 @@
 }
 
 .no-scrollbar-parent {
+	background: var(--background-dark);
+
 	height: 100%;
 	width: 100%;
 	overflow: hidden;
 	position: relative;
 	padding: 0;
 	margin: 0;
-  width: 100%;
 }
 .no-scrollbar-child {
-	background: var(--background-dark);
 	position: absolute;
 	top: 0px;
 	bottom: 0px;
@@ -128,4 +136,16 @@
 	right: var(--sb-width);
 	overflow: auto;
 	padding: 0;
+	padding-left: 2px;
+}
+#design-scale {
+	position: absolute;
+	transform: scale(var(--design-scale-amount));
+}
+
+#scroll-attract, #design-scale {
+	left: -5%;
+	right: 0;
+	top: 0;
+	bottom: 0;
 }

@@ -5,15 +5,32 @@ const PARALLAX_TIMEOUT = {
 	min: 16, maxOffset: 1600, tickDelay: 200, step: 10
 }
 
+curScale = 1;
+reScale();
+
 $(document).ready( function() {
 	updateParallaxMeta();
   updateSbWidth();
+	$('*').bind('dragstart', function() {
+		return false;
+	});
+	initialArrowBottomOffset = $('#end-bit').offset().top;
 });
+
+$(window).resize( function() {
+	reScale();
+});
+
+function reScale() {
+	curScale = String(1200/window.innerWidth)
+	$(':root').css('--design-scale-amount', curScale);
+}
 
 function updateSbWidth() {
   $('#sb-test').removeClass('hidden');
-  $(':root').css('--sb-width', ($('#sb-test-inner').width() - $('#sb-test').width())+'px' );
+  $(':root').css('--sb-width', ($('#sb-test-inner').width() - $( window ).width())+'px' );
   $('#sb-test').addClass('hidden');
+	console.log($(':root').css('--sb-width'));
 }
 
 function updateParallaxMeta() {
@@ -42,13 +59,19 @@ function updateParallax() {
   updateArrow();
 }
 
-var arrowStart, arrowFinish;
-
+var initialArrowBottomOffset;
 function updateArrow() {
-  arrowStart = $('#header').height();
-  arrowFinish = $(window).height() - 500;
-  newPos = arrowStart + 130;
-  newPos += (arrowFinish-arrowStart)*((-prevFirstScroll)/12000);
+	arrowStart = $('#header').height();
+  arrowFinishOffset = $('#end-bit').offset().top;
+  newPos = arrowStart*curScale + 100;
+	//newPos += 100;
+	progressFractional = arrowStart/arrowFinishOffset;
+	newPos += window.innerHeight * progressFractional;
+
+
+	console.log(progressFractional);
+
+
 
   $('#sa-line').css('height', newPos+'px');
   $('#sa-arrow').css('top', newPos+'px');

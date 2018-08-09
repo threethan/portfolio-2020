@@ -10,12 +10,10 @@
 	--text-color: #353535;
 	--background: white;
 	--top-bar-height: 70px;
-	--background-dark: linear-gradient(#7BCDFF 0vh, #5BADFF 100vh);
 	--background-color: #7BCDFF;
 	--sb-width: -15px;
-
 	--text-background: #FFF;
-
+	--design-margin: 200px;
 	font-family: lato, sans-serif;
 }
 
@@ -86,7 +84,6 @@ a:hover {
 	padding: 5px 0;
 	z-index: 5;
 	max-height: 200px;
-
 }
 #nav-dd.hidden {
 	opacity: 0;
@@ -170,11 +167,18 @@ h4 {
 
 .hidden {
 	display: none;
-
+}
 
 .underrow {
 	margin-bottom: 12px;
 	width: 100%;
 	height: 2px;
 	background: var(--accent-color);
+}
+
+#design-frame {
+	position: absolute;
+	width: 100%;
+	//left: var(--design-margin);
+  //width: calc(100% - var(--design-margin) * 2);
 }
