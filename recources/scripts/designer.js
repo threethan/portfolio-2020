@@ -1,8 +1,11 @@
 var prevFirstScroll = -1;
 var plCurTimout = 0;
 var plCurTicker = 0;
+// const PARALLAX_TIMEOUT = {
+// 	min: 16, maxOffset: 1600, tickDelay: 200, step: 10
+// }
 const PARALLAX_TIMEOUT = {
-	min: 16, maxOffset: 1600, tickDelay: 200, step: 10
+	min: 16, maxOffset: 16, tickDelay: 200, step: 10
 }
 
 curScale = 1;
@@ -16,10 +19,12 @@ $(document).ready( function() {
 	});
 	updateParallaxMeta();
 	updateSbWidth();
+	arrowResize();
 });
 
 $(window).resize( function() {
 	reScale();
+	arrowResize();
 });
 
 function reScale() {
@@ -54,6 +59,7 @@ function updateParallaxMeta() {
 	else plCurTimout += PARALLAX_TIMEOUT.step;
 	if (plCurTimout > PARALLAX_TIMEOUT.maxOffset) plCurTimout = PARALLAX_TIMEOUT.maxOffset;
 }
+
 var arrowTickCount = 99;
 const ARROW_TICKS = 0;
 /*ARROW_TICKS: The amount of parallax ticks between updating the arrow.
@@ -71,23 +77,28 @@ function updateParallax() {
 
 }
 
-function updateArrow() {
-	minTip = $('#header').offset().top + $('#header').height()*curScale + 50; //Where the arrow will snap (should be bottom of the header)
-
+const ARROW_BOTTOM_OFFSET = 25;
+/* ARROW_BOTTOM_OFFSET: The distance from the top of the footer of
+the lowest position the arrow tip will snap to */
+var bottomBaked, topOffset, pageBottom, headerHeight;
+function arrowResize() {
+	bottomBaked = $('#footer').height()*curScale + ARROW_BOTTOM_OFFSET/curScale;
+	/* This variable is just used to reduce the number of calculations every frame */
 	topOffset = $(document).height()/8;
 	/* topOffset: The distance from the top of the highest position on the page the arrow is allowed to go.
 		Also used as the maximum distance BELOW the the 'minTip' location the arrow is allowed to go. */
-
-	const ARROW_BOTTOM_OFFSET = 25;
-	/* ARROW_BOTTOM_OFFSET: The distance from the top of the footer of
-	the lowest position the arrow tip will snap to */
-	bottomBaked = $('#footer').height()*curScale + ARROW_BOTTOM_OFFSET/curScale;
-
-
-	scrollAmount = -prevFirstScroll; //May go slightly lower that zero
 	pageBottom = $('#bottom-locator').position().top - topOffset - $(window).height()/2;
 	/* pageBottom: Not necessarily the bottom,
 	it's used for calculating the arrow's position when it isn't snapped to anything */
+	headerHeight = $('#header').height()*curScale;
+	/* headerHeight: The current height of the header, used only for optimization.
+	Scaled with the current page scale, so this whole function should be called AFTER rescale */
+}
+
+function updateArrow() {
+	minTip = $('#header').offset().top + headerHeight + 50; //Where the arrow will snap (should be bottom of the header)
+	scrollAmount = -prevFirstScroll; //May go slightly lower that zero
+
 	scrollFraction = scrollAmount/pageBottom;
 	/* scrollFractionA fractional (float) representation of how far the user has scrolled the page.
 	Typically stays between 0 and 1, but slightly goes under 0 at the top and over 1 at the bottom. */
@@ -111,8 +122,8 @@ function updateArrow() {
 	}
 	if (arrowTip < minTip) arrowTip = minTip
 
-	arrowHeight = arrowTip - $('#header').height()/2*curScale + scrollAmount; //the length of the arrow
-	console.log (arrowTip+'  off:'+topOffset);
+	arrowHeight = arrowTip - headerHeight/2 + scrollAmount; //the length of the arrow
+
   $(':root').css('--sa-height', arrowHeight +'px');
 	$(':root').css('--sa-top', arrowTip-arrowHeight +'px');
 }
