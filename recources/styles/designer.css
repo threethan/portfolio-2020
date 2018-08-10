@@ -1,10 +1,11 @@
 :root {
 	--design-scale-amount: 0.5;
-	--gc1: #3B8DDF; --gc2: #7BCDFF;
+	--gc1: #3B8DDF;
+	--gc2: #7BCDFF;
 	/* --gc1: white; --gc2: black; */
 	--background-dark: linear-gradient(0deg, var(--gc1) 0vh, var(--gc2) 150vh);
 	--background-dark-scaled: linear-gradient(white, white);
-	//--background-dark: white;
+	--sa-top: 10px; --sa-height: 50px;
 }
 
 #scroll-attract {
@@ -12,30 +13,37 @@
 	width: 100%;
 	display: block;
 	text-align: center;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
 }
 
 #sa-arrow {
+	/* transition-duration: 0.05s; */
 	display: inline-block;
 	text-align: center;
 	position: fixed;
-	border-color: white;//var(--accent-color);
+	border-color: var(--text-background);
 	border-width: 5px;
 	border-style: none none solid solid;
 	margin-left: -10px;
 	width: 20px;
 	height: 20px;
 	transform: rotate(-45deg);
-	margin-top: -25px;
+	margin-top: calc(var(--sa-top) + var(--sa-height) - 45px);
 }
 
 #sa-line {
+	/* transition-duration: 0.05s; */
 	display: inline-block;
 	text-align: center;
 	position: fixed;
-
-	background-color: white;//var(--accent-color);
+	background-color: var(--text-background);
 	width: 5px;
 	height: 200px;
+	height: var(--sa-height);
+	top: var(--sa-top);
 }
 
 .design-cluster {
@@ -90,8 +98,8 @@
   box-shadow: none;
   background-color: var(--text-background);
   z-index: 1;
-  left: 5%;
-  width: 85%;
+  left: 5vw;
+	width: 85vw;
 }
 #header h1 {
 	color: var(--text-color);
@@ -136,15 +144,13 @@
 	right: var(--sb-width);
 	overflow: auto;
 	padding: 0;
+	margin: 0;
 	padding-left: 2px;
 }
 #design-scale {
 	position: absolute;
 	transform: scale(var(--design-scale-amount));
-}
-
-#scroll-attract, #design-scale {
-	left: -5%;
+	left: 0;
 	right: 0;
 	top: 0;
 	bottom: 0;

@@ -179,6 +179,6 @@ h4 {
 #design-frame {
 	position: absolute;
 	width: 100%;
-	//left: var(--design-margin);
-  //width: calc(100% - var(--design-margin) * 2);
+	/* left: var(--design-margin); */
+  /* width: calc(100% - var(--design-margin) * 2); */
 }
