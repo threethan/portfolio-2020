@@ -1,6 +1,10 @@
 $(document).ready( function () {
   updateSbWidth();
-  parent.goBack(redir=false);
+  try {
+    parent.goBack(redir=false);
+  } catch {
+    console.log('Call to parent blocked by browser\'s xss policy. Happens on chrome if running from file.');
+  }
 });
 
 $(window).resize( function() {

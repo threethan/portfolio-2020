@@ -4,15 +4,28 @@
 }
 
 body {
-  background-color: var(--accent-color); #333;
+  background-color: var(--accent-color);
 }
 
 h1 {
-  margin-bottom: 0;
-  font-size: 50px;
+	margin-bottom: 5pt;
+  font-size: 39pt;
+	line-height: 44pt;
 	color: white;
 }
 
 a {
 	color: var(--text-color);
+}
+
+
+div::selection, h1::selection, h3::selection, h4::selection,
+em::selection, strong::selection,
+span::selection, a::selection, li::selection {
+	background: #DDD7 !important;
+}
+div::-moz-selection, h1::-moz-selection, h3::-moz-selection, h4::-moz-selection,
+em::-moz-selection, strong::-moz-selection,
+span::-moz-selection, a::-moz-selection, li::-moz-selection {
+	background: #DDD7 !important;
 }
