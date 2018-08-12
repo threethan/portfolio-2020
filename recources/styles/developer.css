@@ -60,7 +60,7 @@ li::before {
 }
 
 h4 {
-	font-family: lato, serif;
+	font-family: lato, sans-serif;
 	font-size: 16pt;
 	color: var(--accent-color);
 	display: inline-block;
@@ -70,19 +70,3 @@ h4 {
 .page-wrapper {
 	z-index: 1;
 }
-
-/* .underrow, h1, h2, a, .accent-text {
-	background: var(--foreground-gradient);
-	background-attachment: fixed;
-}
-h1, h2, a, .accent-text {
-	background-clip: text;
-	color: transparent;
-}
-
-a {
-	font-weight: normal;
-}
-a:hover, a:focus {
-	text-decoration: underline;
-} */

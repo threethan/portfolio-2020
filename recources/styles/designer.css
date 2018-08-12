@@ -1,8 +1,6 @@
 :root {
 	--design-scale-amount: 0.5;
-	--gc1: #3B8DDF;
-	--gc2: #7BCDFF;
-	--background-gradient: linear-gradient(0deg, var(--gc1) 0vh, var(--gc2) 150vh);
+	--background-gradient: linear-gradient(#6BBDFC, #3B8DDF);
 	--background-dark-scaled: linear-gradient(white, white);
 	--sa-top: 10px; --sa-height: 50px;
 }

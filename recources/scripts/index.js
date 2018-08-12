@@ -1,5 +1,5 @@
 // JavaScript Document
-var defaultPage = 1;
+var defaultPage = 2;
 var prevPage, prevPrevPage;
 var ignoreIframeChanges = true;
 
