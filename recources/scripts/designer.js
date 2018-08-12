@@ -1,11 +1,9 @@
 var prevFirstScroll = -1;
 var plCurTimout = 0;
 var plCurTicker = 0;
-// const PARALLAX_TIMEOUT = {
-// 	min: 16, maxOffset: 1600, tickDelay: 200, step: 10
-// }
+
 const PARALLAX_TIMEOUT = {
-	min: 16, maxOffset: 16, tickDelay: 200, step: 10
+	min: 16, maxOffset: 800, tickDelay: 200, step: 5
 }
 
 curScale = 1;
@@ -18,7 +16,6 @@ $(document).ready( function() {
 		return false;
 	});
 	updateParallaxMeta();
-	updateSbWidth();
 	arrowResize();
 });
 
@@ -32,12 +29,6 @@ function reScale() {
 	if (newWidth > window.innerWidth) newWidth = window.innerWidth;
 	curScale = String(newWidth/window.innerWidth)
 	$(':root').css('--design-scale-amount', curScale);
-}
-
-function updateSbWidth() {
-  $('#sb-test').removeClass('hidden');
-  $(':root').css('--sb-width', ($('#sb-test-inner').width() - $( window ).width())+'px' );
-  $('#sb-test').addClass('hidden');
 }
 
 function updateParallaxMeta() {
@@ -96,7 +87,7 @@ function arrowResize() {
 }
 
 function updateArrow() {
-	minTip = $('#header').offset().top + headerHeight + 50; //Where the arrow will snap (should be bottom of the header)
+	minTip = $('#header').offset().top + headerHeight + 70; //Where the arrow will snap (should be bottom of the header)
 	scrollAmount = -prevFirstScroll; //May go slightly lower that zero
 
 	scrollFraction = scrollAmount/pageBottom;

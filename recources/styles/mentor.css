@@ -1,0 +1,18 @@
+:root {
+	--accent-color: var(--page-accent2);
+	--text-color: #EEE;
+}
+
+body {
+  background-color: var(--accent-color); #333;
+}
+
+h1 {
+  margin-bottom: 0;
+  font-size: 50px;
+	color: white;
+}
+
+a {
+	color: var(--text-color);
+}

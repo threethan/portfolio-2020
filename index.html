@@ -5,9 +5,11 @@
 	<title>Ethan Medeiros</title>
 	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="recources/styles/common.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="recources/scripts/common.js"></script>
+	<link rel="stylesheet" type="text/css" href="recources/styles/index.css">
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<script src="recources/scripts/index.js"></script>
 
 	<!-- Favicons & etc -->
 	<link rel="apple-touch-icon" sizes="180x180" href="./recources/icons/apple-touch-icon.png">
@@ -19,31 +21,35 @@
 	<meta name="msapplication-TileColor" content="#da532c">
 	<meta name="msapplication-config" content="./recources/icons/browserconfig.xml">
 	<meta name="theme-color" content="#ffffff">
-
-
-
-
-
-
 </head>
+
+
 <body>
 	<div id="top-nav">
+		<div id="top-bar-return" class="hidden" onclick="goBack()">
+			<div class="left-arrow"></div> <h1> Go Back </h1>
+		</div>
 		<!--img src="LogoE.svg" alt="logo"-->
-		<h1> Ethan Medeiros,
-		<a id="nav-menu" href="javascript:showDd();">
-			<span id="nav-menu-text"> Designer </span>
-			<span id="nav-menu-arrow"> </span>
-		</a>
-		</h1>
+		<div id="top-bar-normal">
+			<h1> Ethan Medeiros,
+				<a id="nav-menu" href="javascript:showDd();">
+					<span id="nav-menu-text"> ... </span>
+					<span id="nav-menu-arrow"> </span>
+				</a>
+			</h1>
+		</div>
 	</div>
 	<div id="nav-dd" class="hidden">
-		<div id="nav-dd-option0" class="nav-dd-option" style="order:1;"> <a href="javascript:switchPage(0)">
+		<div id="nav-dd-option0" class="nav-dd-option" style="order:2;">
+			<a style="color:var(--page-accent0);" href="javascript:switchPage(0)">
 			Designer
 		</a> </div>
-		<div id="nav-dd-option1" class="nav-dd-option" style="order:2;"> <a href="javascript:switchPage(1)">
+		<div id="nav-dd-option1" class="nav-dd-option" style="order:2;">
+			<a style="color: var(--page-accent1);" href="javascript:switchPage(1)">
 			Developer
-		</a> </div>
-		<div id="nav-dd-option2" class="nav-dd-option" style="order:2;"> <a href="javascript:switchPage(2)">
+		</a></div>
+		<div id="nav-dd-option2" class="nav-dd-option" style="order:2;">
+			<a style="color: var(--page-accent2);" href="javascript:switchPage(2)">
 			Mentor
 		</a> </div>
 	</div>
@@ -51,13 +57,13 @@
 
 	<div id="content-wrapper">
 		<div id="page0" class="page-wrapper">
-			<iframe id="design-frame" src="designer.html" scrolling="yes"> </iframe>
+			<iframe id="iframe0" src="designer.html"> </iframe>
 		</div>
 		<div id="page1" class="page-wrapper">
-			<iframe src="developer.html" scrolling="yes"> </iframe>
+			<iframe id="iframe1" onload="iframeLoad(this);" src="developer.html"> </iframe>
 		</div>
 		<div id="page2" class="page-wrapper">
-			This is page 3 (2)
+			<iframe id="iframe2" onload="iframeLoad(this);" src="mentor.html" scrolling="yes"> </iframe>
 		</div>
 	</div>
 

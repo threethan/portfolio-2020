@@ -2,8 +2,7 @@
 	--design-scale-amount: 0.5;
 	--gc1: #3B8DDF;
 	--gc2: #7BCDFF;
-	/* --gc1: white; --gc2: black; */
-	--background-dark: linear-gradient(0deg, var(--gc1) 0vh, var(--gc2) 150vh);
+	--background-gradient: linear-gradient(0deg, var(--gc1) 0vh, var(--gc2) 150vh);
 	--background-dark-scaled: linear-gradient(white, white);
 	--sa-top: 10px; --sa-height: 50px;
 }
@@ -17,6 +16,8 @@
 	right: 0;
 	top: 0;
 	bottom: 0;
+	z-index: 0;
+	pointer-events: none;
 }
 
 #sa-arrow {
@@ -31,7 +32,7 @@
 	width: 20px;
 	height: 20px;
 	transform: rotate(-45deg);
-	margin-top: calc(var(--sa-top) + var(--sa-height) - 45px);
+	margin-top: calc(var(--sa-top) + var(--sa-height) - 50px);
 }
 
 #sa-line {
@@ -50,7 +51,6 @@
 	position: absolute;
 	width: 100%;
 }
-
 
 .parallax {
 	position: absolute;
@@ -72,10 +72,9 @@
 	text-shadow: 0.5vw 0.5vw #CCC;
 
 	font-size: 7.5vw;
-	line-height: 7.5vw;
+	line-height: 9vw;
 	margin: 0;
 	margin-left: -0.2vw;
-	margin-bottom: calc(9vw - 60px);
 	padding: 0.01vw 0;
 }
 
@@ -117,36 +116,6 @@
   border-radius: 4px;
 }
 
-#sb-test {
-  margin-top: -100px;
-  height: 100px;
-  overflow: scroll;
-}
-#sb-test-inner {
-  height: 200px;
-}
-
-.no-scrollbar-parent {
-	background: var(--background-dark);
-
-	height: 100%;
-	width: 100%;
-	overflow: hidden;
-	position: relative;
-	padding: 0;
-	margin: 0;
-}
-.no-scrollbar-child {
-	position: absolute;
-	top: 0px;
-	bottom: 0px;
-	left: 0px;
-	right: var(--sb-width);
-	overflow: auto;
-	padding: 0;
-	margin: 0;
-	padding-left: 2px;
-}
 #design-scale {
 	position: absolute;
 	transform: scale(var(--design-scale-amount));

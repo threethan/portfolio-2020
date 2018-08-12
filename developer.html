@@ -5,63 +5,102 @@
 	<meta charset="UTF-8">
 	<title>Designer</title>
 	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="recources/styles/styles.css">
-	<script src="common.js"></script>
+	<link rel="stylesheet" type="text/css" href="recources/styles/common.css">
+	<link rel="stylesheet" type="text/css" href="recources/styles/developer.css">
+
+	<script src="recources/scripts/iframes.js"></script>
 </head>
 
-<body style="margin: 50px 10%">
-  <!-- The top bit, for a little summary -->
-  <div id="about">
-		<h1> WIP </h1>
-  </div>
-  <!-- First main body section (skills summary) -->
-  <div id="skills" class="hidden">
-    <h1>Some skills of mine</h1>
-    <div class="underrow">
-    </div>
-    <h3>As an <strong>educator</strong> I am skilled &amp; experienced with:</h3>
-    <ul>
-      <li>Caretaking for children and young teens</li>
-      <li>Running educational and recreational group activities</li>
-      <li>Helping children and peers with various projects utilizing engineering, crafts, programming, multimedia creation, and game and graphic design.</li>
-      <li>Teaching programming to beginners ages 9-17 in the Scratch, Java, and C programming languages</li>
-    </ul>
-    <h3>As an <strong>inividual</strong> I am skilled &amp; experienced with:</h3>
-    <ul>
-      <li>Writing code in Java, Javascript, C, C++ and Python</li>
-      <li>Developing and training basic autonomous machine learning <em><small>(feedforward neural network and gentic evolutionary algorithms)</small></em></li>
-      <li>Graphic design for physical and digital promotional material</li>
-    </ul>
-    <h3>As a <strong>team member</strong> I am skilled &amp; experienced with:</h3>
-    <ul>
-      <li>Communicating effectively and working in an objective-based team</li>
-      <li>Facilitating a cooperative and welcoming environment, ensuring everyone is happy and learning</li>
-      <li>Taking a leadership position and directing an autonomous team</li>
-    </ul>
-  </div>
-  <!-- Second main body section (past experience) -->
-  <div id="creds">
-    <h1> Awards & Accreditation</h1>
-    <div class="underrow">
-    </div>
-    <h3><strong>First Place Overall</strong> &bull; <em><a href="http://2018.metrohacks.org/"> Metrohacks III</a> </em></h3>
-    Awarded for <em>Speech Advisor</em>, my project in collaboration with three teammates. It provides realtime info &amp; advise on the delivery relitive to a script
-  </div>
+<body>
+	<div id = "sb-test"> <div id = "sb-test-inner"> Secret Message! </div> </div>
 
-  <div id="experience">
-    <h1> Projects </h1>
-    <div class="underrow">
-    </div>
-    <div>
-      <h3>Sign-In System &bull; <em><a href="https://www.partsandcrafts.org/"><strong>Parts and Crafts</strong></a></em></h3>
-      A purpose-built system for keeping track of campers.
-      <br>
-      <br>
-    </div>
-    <div>
-      <h3><a href="http://www.computerclubhouse.org/"><strong>Flagship Clubhouse</strong></a> &bull; <em>Leadership Crew: February to September 2017</em></h3>
-      Assisting children ages 10-14 with projects. Working with peers ages 15-19 to organize activities, develop multimedia projects, and run events. Graphic design for various promotional materials. Paid position. <br>
-      <br>
-    </div>
-  </div>
+	<div class="no-scrollbar-parent"> <div class="no-scrollbar-child">
+		<div class="padded">
+			<!-- TODO add about section -->
+			<!-- Main body section ( Skills ) -->
+			<div id="skills">
+				<h1> Skills &amp; Specialties </h1>
+				<div class="underrow"> </div>
+				<div class="par">
+					As a multilingual programmer, I'm able to adapt to almost any development environment in any major language.
+				</div>
+				<div class="par">
+					<h3>Here are just a few of the languages I'm experienced in:</h3>
+					<ul>
+						<li><h4>Python</h4> - As a web backend, a data processing tool,
+							a controller for an autonomous robot, and a backend for user-facing applications. </li>
+
+						<li><h4>Java</h4> - For data processing, machine learning, and game development</li>
+
+						<li><h4>C</h4> - For data processing and basic machine learning.</li>
+
+						<li><h4>RobotC</h4> - As a controller for a simple autonomous robot.</li>
+					</ul>
+				</div>
+				<div class="par">
+					<h3>And, for web development:</h3>
+					<ul>
+						<li><h4>JavaScript</h4> - I use JavaScript for dynamic control of CSS and HTML for frontends,
+						preprocessing for backend and bandwidth optimization,
+						realtime data transmission between client and server systems, and HTML canvas based browser games.
+						I have also made web apps entirely in JavaScript, removing the need for a backend altogether when suitable.</li>
+
+						<li><h4>CSS</h4> - I use CSS for basic styling, responsive styling (both with and without JavaScript),
+							substituting simple images in UI elements with more lightweight and adaptable CSS replacements.
+							I typically create interfaces using CSS variables and other modern web technologies,
+							but always make sure to retain functionality even on legacy systems. </li>
+
+						<li><h4>HTML</h4> - As with anything on the web, HTML is the basis of every web app, web game, and web site I've ever made.
+						I always make sure to do whatever can be reasonably done using only HTML and CSS,
+						and integrating my JavaScript as closely with the DOM as possible.</li>
+					</ul>
+				</div>
+				<div class="par">
+				</div>
+			</div>
+
+		  <!-- Main body section (Awards & Accreditation) -->
+		  <div id="creds">
+				<h1> Awards &amp; Accreditation</h1>
+		    <div class="underrow"> </div>
+				<div class="par">
+			    <h3><strong>Grand Prize</strong>
+					&bull; <em><a class="accent-text" href="http://2018.metrohacks.org/"> Metrohacks III</a> </em></h3>
+			    Awarded for <em>Speech Advisor</em>, my project in collaboration with three teammates. It provides realtime info &amp; advise on the delivery relative to a script.
+					The grand prize is awarded to the judges' choice of project from the winners of each of four categories, in our case civics.
+				</div>
+				<div class="par">
+					<h3><strong>C++ Programming</strong>
+					&bull; <em><span class="accent-text">Taken at <a href="https://www.idtech.com/"> ID Tech</a>, accredited by <a href="https://www1.villanova.edu/content/main.html"> Villanova University</a></span> </em></h3>
+					A comprehensive full-time two week college level introductory course to the C++ programming language. 2.4 CEU credits were awarded upon successful completion of the course.
+				</div>
+				<div class="par">
+					<h3><strong>Java Programming</strong>
+					&bull; <em><span class="accent-text">Taken at <a href="https://www.idtech.com/"> ID Tech</a>, accredited by <a href="https://www1.villanova.edu/content/main.html"> Villanova University</a></span> </em></h3>
+					A full-time two week college level introductory course to the Java programming language focusing on 2D game development. 3 CEU credits were awarded upon successful completion of the course.
+				</div>
+		  </div>
+
+			<!-- Main body section ( Projects / Experience ) -->
+		  <div id="experience">
+		    <h1> Some Notable Pr<span class="kern-help">o</span>jects </h1>
+		    <div class="underrow"> </div>
+		    <div class="par">
+		      <h3><a href="https://github.com/threethan/Parts-and-Crafts-Sign-In">Sign-In System </a>
+						&bull; <em><a class="accent-text" href="https://www.partsandcrafts.org/"><strong>Parts and Crafts</strong></a></em></h3>
+		      A purpose-built system for keeping track of campers, built to extremely lightweight on both the server and client, allow quick and easy batch or individual actions and accommodate for typos using fuzzy-search.
+		    </div>
+		    <div class="par">
+		      <h3>Speech Advisor Web &bull; <em class="accent-text">Personal</em></h3>
+					Speech Advisor is a (currently in development) tool to give real time feedback on scripted dictation to help users improve their public speaking abilities.
+					Speech Advisor Web is a total rewrite of the original Speech Advisor project (mentioned above) made to run fully in browser using JavaScript's newly introduced speech recognition standard.
+		    </div>
+		  </div>
+
+
+			<div id="bottom-pad"></div>
+
+		</div>
+	</div> </div>
 </body>
+</html>

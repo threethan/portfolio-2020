@@ -1,0 +1,88 @@
+:root {
+	--accent-color: var(--page-accent1);
+	--background-gradient: linear-gradient(#333, #222);
+	--foreground-gradient: linear-gradient(#4AD689, #2AB669);
+}
+
+body {
+  color: #DDD;
+}
+
+h3::selection {
+  background: #ffb7b7 !important;
+}
+
+div::selection, h1::selection, h3::selection, h4::selection,
+em::selection, strong::selection,
+span::selection, a::selection, li::selection {
+	background: #DDD5 !important;
+}
+div::-moz-selection, h1::-moz-selection, h3::-moz-selection, h4::-moz-selection,
+em::-moz-selection, strong::-moz-selection,
+span::-moz-selection, a::-moz-selection, li::-moz-selection {
+	background: #DDD5 !important;
+}
+
+h1 {
+  margin-bottom: 0;
+  font-size: 50px;
+}
+
+.accent-text {
+	color: var(--accent-color);
+}
+
+a {
+	color: inherit;
+}
+
+.par {
+	margin-bottom: 16pt;
+}
+
+.kern-help {
+	letter-spacing: -2pt;
+}
+
+#bottom-pad {
+	height: 100px;
+}
+
+li {
+	margin-bottom: 6pt;
+	list-style-type:none;
+}
+li {
+  margin-left: -30pt;
+  padding-right: 10pt;
+}
+
+li::before {
+  content: "> ";
+  color: var(--accent-color); /* or whatever color you prefer */
+	font-size: 18pt;
+}
+
+h4 {
+	font-family: lato, serif;
+	font-size: 16pt;
+	color: var(--accent-color);
+	display: inline-block;
+	margin: 0;
+}
+
+/* .underrow, h1, h2, a, .accent-text {
+	background: var(--foreground-gradient);
+	background-attachment: fixed;
+}
+h1, h2, a, .accent-text {
+	background-clip: text;
+	color: transparent;
+}
+
+a {
+	font-weight: normal;
+}
+a:hover, a:focus {
+	text-decoration: underline;
+} */
