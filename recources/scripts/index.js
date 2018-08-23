@@ -1,31 +1,27 @@
 // JavaScript Document
 var defaultPage = 2;
 var prevPage, prevPrevPage;
-var ignoreIframeChanges = true;
-
-var iframesThatHaveLoaded = [];
-//TODO ignore the initial loading of each iframe
 
 const PAGE_NAMES = ['designer', 'developer', 'mentor'];
 
 $(document).ready( function() {
-	//Some redundant code here...
-	//  for (i=0; i<PAGE_NAMES.length; i++) {
- 	// 	$('#page'+i).css('transform','translateX('+ ((i-defaultPage)*100) +'vw');
-	// }
 	switchPage(defaultPage);
 	//updateParallax();
   $('#nav-menu-text').html(PAGE_NAMES[defaultPage]);
 });
 
-function stopIgnoringIframeChanges() {
-	ignoreIframeChanges = false;
-}
 //Called whenever an iframe opens a new page
 function iframeLoad(elem) {
-	if (ignoreIframeChanges) {}//ignoreIframeChanges = false;
-	else {
-		$('#top-bar-normal').addClass('hidden');
+	try {
+		e = document.getElementById('iframe'+prevPage)
+		if (e) { //Ingore it running on a null element on initial load
+			//Will fail if url is from another site
+			x = e.contentWindow.location.href
+			|| e.contentDocument.location.href;
+		}
+	}
+	catch {
+	 	$('#top-bar-normal').addClass('hidden');
 		$('#top-bar-return').removeClass('hidden');
 	}
 }
@@ -35,7 +31,6 @@ function goBack(redir=true) {
 	$('#top-bar-normal').removeClass('hidden');
 	$('#top-bar-return').addClass('hidden');
 	ignoreIframeChanges = true;
-	setTimeout(stopIgnoringIframeChanges, 100);
 }
 function iframeLoaded() {
 	$('#top-bar-normal').removeClass('hidden');
@@ -91,8 +86,6 @@ function switchPage(num) {
 
 	setTimeout(switchPageDeferred, 10);
 	ignoreIframeChanges = true;
-	setTimeout(stopIgnoringIframeChanges, 100);
-
 }
 function switchPageDeferred() {
 	e = $('#page'+prevPrevPage);
