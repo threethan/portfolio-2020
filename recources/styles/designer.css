@@ -106,6 +106,19 @@
 	color: var(--accent-color);
 	text-shadow: 0.5vw 0.5vw #CCC;
 }
+#header .sp {
+	display: inline-block;
+	width: 60pt;
+	text-shadow: none;
+	color: var(--text-color);
+}
+
+h2 {
+	font-size: 5vw;
+	line-height: 5vw;
+	margin: 1vw 0.5vw;
+	color: var(--text-color);
+}
 
 .design-show.label {
 	box-shadow: 0 0 10px 0 #00000035;
