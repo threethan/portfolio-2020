@@ -6,10 +6,18 @@
 	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="recources/styles/common.css">
 	<link rel="stylesheet" type="text/css" href="recources/styles/index.css">
+	<link rel="stylesheet" type="text/css" href="recources/styles/designer.css">
+	<link rel="stylesheet" type="text/css" href="recources/styles/developer.css">
+	<link rel="stylesheet" type="text/css" href="recources/styles/mentor.css">
+
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="recources/scripts/jquery.easing.1.3.js"></script>
+
 
 	<script src="recources/scripts/index.js"></script>
+	<script src="recources/scripts/smoothscroll.js"></script>
+
 
 	<!-- Favicons & etc -->
 	<link rel="apple-touch-icon" sizes="180x180" href="./recources/icons/apple-touch-icon.png">
@@ -22,7 +30,6 @@
 	<meta name="msapplication-config" content="./recources/icons/browserconfig.xml">
 	<meta name="theme-color" content="#ffffff">
 </head>
-
 
 <body>
 	<div id="top-nav">
@@ -55,17 +62,296 @@
 	</div>
 	<div id="top-nav-spacer"></div>
 
+	<div id = "sb-test"> <div id = "sb-test-inner"> Secret Message! </div> </div>
+	<div class="no-scrollbar-parent"> <div class="no-scrollbar-child">
+	<div id="topbit">
+	</div>
+	<!-- PAGES -->
 	<div id="content-wrapper">
+		<div id="popup-img-back" class="no-img">
+			<img id="popup-img-img">
+		</div>
 		<div id="page0" class="page-wrapper hidden">
-			<iframe id="iframe0" data-src="designer.html"> </iframe>
+			<div class="padded">
+				<br>
+				<div id="quote" class="section">
+					<div class="par">
+						<h1 style="color: #333;">&ldquo; Everything is designed. Few things are designed well. &rdquo; </h1>
+						<h2 style="float: right; height: 20px; margin: 0;">-Brian Reed</h2>
+						<div style="height: 10px; clear: both;"></div>
+					</div>
+				</div>
+
+				<div id="clubhouse" class="section">
+					<h1> Flagship Clubhouse </h1>
+					<div class="underrow"> </div>
+					<ul>
+						<li class="par">
+							<h4>Promotional Documents</h4>
+							<div class="img-top-space"></div>
+							<img class="pop" src="./recources/imgs/design-show/CLC-promo1.png"  alt="[Loading...]">
+							<img class="pop" src="./recources/imgs/design-show/CLC-promo2.png"  alt="[Loading...]">
+							<div class="img-clear"></div>		</li>
+						<li class="par">
+							<h4 title="(and modeling)">Apparel & Logo Design</h4>
+							<div class="img-top-space"></div>
+							<img class="pop" src="./recources/imgs/design-show/CLC-shirt-display.png"  alt="[Loading...]">
+							<img class="pop" src="./recources/imgs/design-show/CLC-shirt-dark.png"  alt="[Loading...]">
+							<div class="img-clear"></div>		</li>
+						<li class="par">
+							<h4 title="(and modeling)">Blog Layout and Graphics</h4>
+							<div class="img-top-space"></div>
+							<img class="pop" src="./recources/imgs/design-show/CLC-blog1.png"  alt="[Loading...]">
+							<img class="pop" src="./recources/imgs/design-show/CLC-blog2.png"  alt="[Loading...]">
+							<img class="pop" src="./recources/imgs/design-show/CLC-blog3.png"  alt="[Loading...]">
+							<div class="img-clear"></div>		</li>
+					</ul>
+				</div>
+				<div id="partsandcrafts" class="section">
+					<h1> Parts and Crafts </h1>
+					<div class="underrow"> </div>
+					<ul>
+						<li class="par">
+							<h4>Sign-In System UX Design</h4>
+							<div class="img-top-space"></div>
+							<img class="pop" src="./recources/imgs/design-show/PC-signin-desktop1.png"  alt="[Loading...]">
+							<img class="pop" src="./recources/imgs/design-show/PC-signin-mobile1.png"  alt="[Loading...]">
+							<img class="pop" src="./recources/imgs/design-show/PC-signin-desktop2.png"  alt="[Loading...]">
+							<img class="pop" src="./recources/imgs/design-show/PC-signin-mobile2.png"  alt="[Loading...]">
+							<div class="img-clear"></div>		</li>
+					</ul>
+				</div>
+				<div id="personal" class="section hidden">
+					<h1> Personal Projects </h1>
+					<div class="underrow"> </div>
+					<ul>
+						<li class="par">
+							<h4>Sign-In System UX Design</h4>
+							<div class="img-top-space"></div>
+							<img class="pop" src="./recources/imgs/design-show/PC-signin-desktop1.png"  alt="[Loading...]">
+							<img class="pop" src="./recources/imgs/design-show/PC-signin-mobile1.png"  alt="[Loading...]">
+							<img class="pop" src="./recources/imgs/design-show/PC-signin-desktop2.png"  alt="[Loading...]">
+							<img class="pop" src="./recources/imgs/design-show/PC-signin-mobile2.png"  alt="[Loading...]">
+							<div class="img-clear"></div>		</li>
+					</ul>
+				</div>
+
+				<div id="contact" class="section">
+					<h1> Want More?</h1>
+					<div class="underrow"> </div>
+					<ul>
+						<li class="par">
+							<h4> <a href="mailto:ethanjmedei@gmail.com"> Email &bull; ethanjmedei@gmail.com</a> </h4>
+						</li>
+					</ul>
+
+					<div class="par">
+						Contact me! Together, we can make a design that we will both be proud to display.
+					</div>
+				</div>
+
+				<div id="bottom-pad"></div>
+
+			</div>
 		</div>
 		<div id="page1" class="page-wrapper hidden">
-			<iframe id="iframe1" onload="iframeLoad(this);" data-src="developer.html"> </iframe>
+				<div class="padded">
+					<!-- TODO add about section -->
+					<!-- Main body section ( Skills ) -->
+					<div id="skills">
+						<h1> Skills &amp; Specialties </h1>
+						<div class="underrow"> </div>
+						<div class="par">
+							As a multilingual programmer, I'm able to adapt to almost any development environment in any major language.
+							I specialize in data processing, AI, and web development, and I can comfortably work with any aspect of software development.
+						</div>
+						<div class="par">
+							<h3>Here are just a few of the languages I'm experienced in:</h3>
+							<ul>
+								<li><h4>>&nbsp;Python</h4> - As a web backend, a data processing tool,
+									a controller for an autonomous robot, and a backend for user-facing applications. </li>
+
+								<li><h4>>&nbsp;Java</h4> - For data processing, machine learning, and game development</li>
+
+								<li><h4>>&nbsp;C</h4> - For data processing and basic machine learning.</li>
+
+								<li><h4>>&nbsp;RobotC</h4> - As a controller for a simple autonomous robot.</li>
+							</ul>
+						</div>
+						<div class="par">
+							<h3>And, for web development:</h3>
+							<ul>
+								<li><h4>>&nbsp;JavaScript</h4>
+									<br> I use JavaScript for dynamic control of CSS and HTML for frontends,
+								preprocessing for backend and bandwidth optimization,
+								realtime data transmission between client and server systems, and HTML canvas based browser games.
+								I have also made web apps entirely in JavaScript, removing the need for a backend altogether when suitable.</li>
+
+								<li><h4>>&nbsp;CSS</h4>
+									<br> I use CSS for basic styling, responsive styling (both with and without JavaScript),
+									substituting simple images in UI elements with more lightweight and adaptable CSS replacements.
+									I typically create interfaces using CSS variables and other modern web technologies,
+									but always make sure to retain functionality even on legacy systems. </li>
+
+								<li><h4>>&nbsp;HTML</h4>
+									<br> As with anything on the web, HTML is the basis of every web app, web game, and web site I've ever made.
+								I always make sure to do whatever can be reasonably done using only HTML and CSS,
+								and integrating my JavaScript as closely with the DOM as possible.</li>
+							</ul>
+						</div>
+						<div class="par">
+						</div>
+					</div>
+
+					<!-- Main body section (Awards & Accreditation) -->
+					<div id="creds">
+						<h1> Awards &amp; Accreditation</h1>
+						<div class="underrow"> </div>
+						<ul>
+							<li class="par">
+								<h4><strong>Grand Prize</strong>
+								&bull; <em><a class="accent-text" href="http://2018.metrohacks.org/"> Metrohacks III</a> </em></h4>
+								<br> Awarded for <em>Speech Advisor</em>, my project in collaboration with three teammates. It provides realtime info &amp; advise on the delivery relative to a script.
+								The grand prize is awarded to the judges' choice of project from the winners of each of four categories, in our case civics.
+							</li>
+							<li class="par">
+								<h4><strong>C++ Programming</strong>
+								&bull; <em><span class="accent-text">Taken at <a href="https://www.idtech.com/"> ID Tech</a>, accredited by <a href="https://www1.villanova.edu/content/main.html"> Villanova University</a></span> </em></h4>
+								<br> A comprehensive full-time two week college level introductory course to the C++ programming language. 2.4 CEU credits were awarded upon successful completion of the course.
+							</li>
+							<li class="par">
+								<h4><strong>Java Programming</strong>
+								&bull; <em><span class="accent-text">Taken at <a href="https://www.idtech.com/"> ID Tech</a>, accredited by <a href="https://www1.villanova.edu/content/main.html"> Villanova University</a></span> </em></h4>
+								<br> A full-time two week college level introductory course to the Java programming language focusing on 2D game development. 3 CEU credits were awarded upon successful completion of the course.
+							</li>
+						</ul>
+					</div>
+
+					<!-- Main body section ( Projects / Experience ) -->
+					<div id="experience">
+						<h1> Some Notable Pr<span class="kern-help">o</span>jects </h1>
+						<div class="underrow"> </div>
+						<ul>
+							<li class="par">
+								<h4>Sign-In System
+									&bull; <em><a class="accent-text" href="https://www.partsandcrafts.org/"><strong>Parts and Crafts</strong></a></em></h4>
+								<br> A purpose-built system for keeping track of campers, built to extremely lightweight on both the server and client, allow quick and easy batch or individual actions and accommodate for typos using fuzzy-search.
+							</li>
+							<li class="par">
+								<h4><a class="accent-text" href="http://ethanmakes.website/Speech-Advisor-Web/">Speech Advisor Web </a> &bull; <em class="accent-text">Personal</em></h4>
+								<br> Speech Advisor is a (currently in development) tool to give real time feedback on scripted dictation to help users improve their public speaking abilities.
+								Speech Advisor Web is a total rewrite of the original Speech Advisor project (mentioned above) made to run fully in browser using JavaScript's newly introduced speech recognition standard.
+							</li>
+						</ul>
+					</div>
+
+					<div id="contact">
+						<h1> Contact Me</h1>
+						<div class="underrow"> </div>
+						<ul>
+							<li class="par">
+								<h4> <a href="mailto:ethanjmedei@gmail.com"> Email &bull; ethanjmedei@gmail.com</a> </h4>
+							</li>
+						</ul>
+
+						<div class="par">
+							Don't feel shy to ask me anything. I can't wait to work with you on your next project!
+						</div>
+					</div>
+
+					<div id="bottom-pad"></div>
+
+				</div>
 		</div>
 		<div id="page2" class="page-wrapper hidden">
-			<iframe id="iframe2" onload="iframeLoad(this);" data-src="mentor.html" scrolling="yes"> </iframe>
+
+				<div class="padded">
+				  <div id="about">
+						<h1> My Philosophy </h1>
+						<div class="underrow"> </div>
+						<h4>
+							<strong>&ldquo;The whole purpose of education is to turn mirrors into windows.&rdquo;</strong>
+							<span style="display: inline-block;"> - <em> Sydney J. Harris, Journalist and Writer </em> </span>
+						</h4>
+						<div class="par">
+							Today's world is full of complex devices and systems have become integral to almost all of our lives,
+							yet few people actually understand how they work. My goal, as an educator and a leader, is to change this &mdash;
+							to make the inner workings of everyday technologies transparent to my students, no matter how young.
+						</div>
+						<div class="par">
+							I've always believed that the best way to learn is by doing, and this is something I have taken to heart throughout my time as an educator.
+							No matter what I'm teaching, I make sure my students (and my peers) practice the subject being taught, so that they can truly understand it.
+						</div>
+					</div>
+
+				  <!-- Main body section (past experience) -->
+				  <div id="creds">
+				    <h1> My Experience </h1>
+				    <div class="underrow"> </div>
+						<div class="par">
+							<h3>CIT</h3>
+							<h4><strong><a href="https://www.partsandcrafts.org/">Parts and Crafts </a></strong> &bull; <em> Summers of 2013 to 2016 </em></h4>
+							Supervising indoor and outdoor activities with campers 8-12, assisting campers with projects,
+							woodworking, teaching programming to campers using MIT's Scratch and Processing Java. Volunteer position.
+							<div class="img-top-space"></div>
+							<img class="pop" src="./recources/imgs/educator/PC-Solder.jpg"  alt="[Loading...]">
+							<img class="pop" src="./recources/imgs/educator/PC-Gesture.jpg" alt="[Loading...]">
+						</div>
+						<div class="underrow sm"></div>
+						<div class="par">
+							<h3>Childcare Personnel</h3>
+							<h4><strong>First Community Baptist Methodist Church </strong> &bull; <em> February to October 2017 </em></h4>
+							Taking care of children 6-10, supervising basic outdoor activities. Paid position.
+							<div class="img-top-space"></div>
+							<img class="pop" src="./recources/imgs/educator/first-umc.jpg" alt="[Loading...]">
+						</div>
+						<div class="underrow sm"></div>
+						<div class="par">
+							<h3> Leadership Crew </h3>
+							<h4><strong><a href="http://clubhousebeat.org/">The Flagship Clubhouse</a></strong> &bull; <em> February 2016 to September 2017 </em></h4>
+							Assisting children and teens ages 10-16 with projects, leading a group of peers to complete projects and run events,
+							teaching programming in JavaScript and Python,
+							and facilitating activities integrating technology with traditional physical crafts. Paid position.
+							<div class="img-top-space"></div>
+							<img class="pop" src="./recources/imgs/educator/CLC-Pres.png"  alt="[Loading...]">
+							<img class="pop" src="./recources/imgs/educator/CLC-Pres2.jpg" alt="[Loading...]">
+							<img class="pop" src="./recources/imgs/educator/CLC-Game.jpg"  alt="[Loading...]">
+						</div>
+						<div class="underrow sm"></div>
+						<div class="par">
+							<h3>Team Leader for Programming &amp; Mechanical Subteams</h3>
+							<h4><strong>Medford High Botball Robotics </strong> &bull; <em> 2017 to 2018 Season </em></h4>
+							Directing and managing both subteams while educating team members on engineering and programming in relation
+							to creating autonomous robots for the botball completition.
+							Typically two separate positions. Volunteer positions.
+							<div class="img-top-space"></div>
+							<img class="pop" src="./recources/imgs/educator/robotics-prep1.jpg" alt="[Loading...]">
+							<img class="pop" src="./recources/imgs/educator/robotics-prep2.jpg" alt="[Loading...]">
+							<img class="pop" src="./recources/imgs/educator/robotics-comp1.jpg" alt="[Loading...]">
+							<img class="pop" src="./recources/imgs/educator/robotics-comp2.jpg" alt="[Loading...]">
+						</div>
+						<div class="underrow sm"></div>
+						<div class="par">
+							<h3>Counselor</h3>
+							<h4><strong><a href="https://www.partsandcrafts.org/">Parts and Crafts </a></strong> &bull; <em> Summer of 2017 </em></h4>
+							Running indoor and outdoor activities with campers 8-12, teaching campers various technical, craft, and engineering skills,
+							maintaining child-friendliness in an open computer lab, facilitating and assisting with cooperative programming projects, teaching programming to campers using MIT's Scratch. Paid position.
+						</div>
+				  </div>
+					<div id="contact">
+				    <h1> Get in touch</h1>
+				    <div class="underrow"> </div>
+						<h4> <a href="mailto:ethanjmedei@gmail.com">Email &bull; ethanjmedei@gmail.com</a> </h4>
+						<div class="par">
+							If you want to learn any more, just ask me! I'm always ready to teach to anyone who's ready to learn.
+						</div>
+				  </div>
+				</div>
+
+				<div id="bottom-pad"></div>
 		</div>
 	</div>
+	</div></div>
 
 </body>
 </html>

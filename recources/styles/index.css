@@ -81,7 +81,7 @@
 	left: calc(var(--page-padding) + 449px);
 	top: 2px;
 	background: var(--text-background);
-	box-shadow: 0 0 10px 0 grey;
+	box-shadow: 0 0 10px 0 #0005;
 	border-radius: 7px;
 	padding: 5px 0;
 	z-index: 5;
@@ -165,16 +165,18 @@
 
 .page-wrapper {
 	position: absolute;
-  overflow: hidden;
-	height: 100vh;
+	display: block;
+	min-height: 100vh;
 	margin: 0;
 	z-index: 1;
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
 	pointer-events: all;
-	scroll-behavior:
+	padding: 0;
+
+	transition: transform 1s;
+}
+#topbit {
+	margin: 0; padding: 0;
+	background: white;
 }
 
 @media screen and (max-width: 1200px) {

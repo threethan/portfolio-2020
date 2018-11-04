@@ -1,61 +1,57 @@
 :root {
-	--accent-color: var(--page-accent1);
-	--background-gradient: linear-gradient(#333, #222);
+	--page-accent1: #3AC679;
+	--page-background1: linear-gradient(#2C2C2C, #1A1A1A);
 }
 
-body {
+#page1 {
+	--accent-color: var(--page-accent1);
   color: #DDD;
 }
 
-div::selection, h1::selection, h3::selection, h4::selection,
-em::selection, strong::selection,
-span::selection, a::selection, li::selection {
+#page1 div::selection, #page1 h1::selection, #page1 h3::selection, #page1 h4::selection,
+#page1 em::selection, #page1 strong::selection,
+#page1 span::selection, #page1 a::selection, #page1 li::selection {
 	background: #DDD5 !important;
 }
-div::-moz-selection, h1::-moz-selection, h3::-moz-selection, h4::-moz-selection,
-em::-moz-selection, strong::-moz-selection,
-span::-moz-selection, a::-moz-selection, li::-moz-selection {
+#page1 div::-moz-selection, #page1 h1::-moz-selection, #page1 h3::-moz-selection, #page1 h4::-moz-selection,
+#page1 em::-moz-selection, #page1 strong::-moz-selection,
+#page1 span::-moz-selection, #page1 a::-moz-selection, #page1 li::-moz-selection {
 	background: #DDD5 !important;
 }
 
-h1 {
-  margin-bottom: 5pt;
+#page1 h1 {
   font-size: 39pt;
 	line-height: 44pt;
+	color: var(--accent-color);
+	height: auto;
 }
 
-.accent-text {
+#page1 .accent-text {
 	color: var(--accent-color);
 }
 
-a {
+#page1 a {
 	color: inherit;
 }
 
-.par {
+#page1 .par {
 	margin-bottom: 16pt;
 }
 
-.kern-help {
+#page1 .kern-help {
 	letter-spacing: -2pt;
 }
 
-li {
+#page1 li {
 	margin-bottom: 6pt;
 	list-style-type:none;
 }
-li {
+#page1 li {
   margin-left: -30pt;
   padding-right: 10pt;
 }
 
-li::before {
-  content: "> ";
-  color: var(--accent-color); /* or whatever color you prefer */
-	font-size: 18pt;
-}
-
-h4 {
+#page1 h4 {
 	font-family: lato, sans-serif;
 	font-size: 16pt;
 	color: var(--accent-color);
@@ -63,6 +59,6 @@ h4 {
 	margin: 0;
 }
 
-.page-wrapper {
+#page1 .page-wrapper {
 	z-index: 1;
 }

@@ -6,15 +6,12 @@
 }
 
 :root {
-	--page-accent0: #3B9DFF;
-	--page-accent1: #3AC679;
-	--page-accent2: #B537FF;
-
+	--background: white;
 	--accent-color: #3B9DFF;
 	--text-color: #353535;
 	/* --background: black;--white; */
 	--top-bar-height: 70px;
-	--background-color: black;--#7BCDFF;
+	--background-color: black;
 	--sb-width: -15px;
 	--text-background: #FFF;
 	--page-padding: 20%;
@@ -70,7 +67,7 @@ h4 {
 }
 
 .hidden {
-	display: none;
+	display: none !important;
 }
 
 .underrow {
@@ -91,7 +88,6 @@ h4 {
 	overflow: hidden;
 }
 .no-scrollbar-child {
-	background: var(--background-gradient);
 	position: absolute;
 	top: 0px;
 	bottom: 0px;
@@ -101,7 +97,12 @@ h4 {
 	overflow-x: hidden;
 	padding: 0;
 	margin: 0;
-	padding-left: 2px;
+}
+
+body {
+	height: 100vh;
+	width: 100vw;
+	background: var(--background);
 }
 
 .padded {
@@ -119,4 +120,71 @@ h4 {
 
 #bottom-pad {
 	height: 100px;
+}
+
+.img-top-space {
+	height: 15px;
+}
+img {
+	-webkit-user-select: none; /* Safari 3.1+ */
+	-moz-user-select: none; /* Firefox 2+ */
+	-ms-user-select: none; /* IE 10+ */
+	user-select: none; /* Standard syntax */
+}
+img.pop {
+	object-fit: cover;
+	transition-duration: 0.25s;
+	float: left;
+	height: 100px;
+	width: 175px;
+	border-radius: 5px;
+	margin-right: 15px;
+	margin-bottom: 15px;
+	box-shadow: 0 0 10px 0 #0003;
+	opacity: 0.5;
+}
+img.pop:hover {
+	box-shadow: 0 0 10px 0 #0006;
+	opacity: 1;
+}
+#popup-img-back {
+	transition-duration: 0.5s;
+	z-index: 10;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: transparent;
+	text-align: center;
+	line-height: 100%;
+}
+#popup-img-img {
+	transition-duration: 0.5s;
+	position: relative;
+	display: inline-block;
+	max-height: 60%;
+	top: 17.5%;
+	max-width: 90%;
+	box-shadow: 0 0 10px 0 #0009;
+	border-radius: 10px;
+}
+.no-img #popup-img-img {
+	max-height: 10%;
+}
+
+#popup-img-back:not(.no-img) {
+	pointer-events: all;
+	background-color: #0009;
+}
+
+.no-img {
+	opacity: 0;
+	pointer-events: none;
+}
+
+.img-clear {
+	clear:both;
+	height: 0;
+	margin-bottom: -11px;
 }
