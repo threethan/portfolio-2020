@@ -10,11 +10,7 @@ $(document).ready( function() {
   $('#nav-menu-text').html(PAGE_NAMES[defaultPage]);
 
   updateSbWidth();
-  try {
-    parent.goBack(redir=false);
-  } catch {
-    console.log('Call to parent blocked by browser\'s xss policy. Happens on chrome if running from file.');
-  }
+
   $('img.pop').click( function() {
     $('#popup-img-img').prop('src', $(this).prop('src') );
     $('#popup-img-back').removeClass('no-img');
@@ -27,29 +23,34 @@ $(document).ready( function() {
 $(window).resize( function() {
   updateSbWidth();
 });
-function updateSbWidth() {}
+function updateSbWidth() {
+	outerWidthTemp = $(".no-scrollbar-parent").first().outerWidth();
+	innerWidthTemp = $("#sb-test-inner" ).first().width();
+	$(":root").css("--sb-width", innerWidthTemp - outerWidthTemp + "px");
 
-//Called whenever an iframe opens a new page
-// function iframeLoad(elem) {
-// 	try {
-// 		e = document.getElementById('iframe'+prevPage)
-// 		if (e) { //Ingore it running on a null element on initial load
-// 			//Will fail if url is from another site
-// 			x = e.contentWindow.location.href
-// 			|| e.contentDocument.location.href;
-// 		}
-// 	}
-// 	catch {
-// 	 	$('#top-bar-normal').addClass('hidden');
-// 		$('#top-bar-return').removeClass('hidden');
-// 	}
-// }
-// function goBack(redir=true) {
-// 	if (redir) document.getElementById('iframe'+prevPage).src = $('#iframe'+prevPage).data('src');
-// 	$('#top-bar-normal').removeClass('hidden');
-// 	$('#top-bar-return').addClass('hidden');
-// 	ignoreIframeChanges = true;
-// }
+}
+
+//[OLD] Called whenever an iframe opens a new page
+/* function iframeLoad(elem) {
+	try {
+		e = document.getElementById('iframe'+prevPage)
+		if (e) { //Ingore it running on a null element on initial load
+			//Will fail if url is from another site
+			x = e.contentWindow.location.href
+			|| e.contentDocument.location.href;
+		}
+	}
+	catch {
+	 	$('#top-bar-normal').addClass('hidden');
+		$('#top-bar-return').removeClass('hidden');
+	}
+}
+function goBack(redir=true) {
+	if (redir) document.getElementById('iframe'+prevPage).src = $('#iframe'+prevPage).data('src');
+	$('#top-bar-normal').removeClass('hidden');
+	$('#top-bar-return').addClass('hidden');
+	ignoreIframeChanges = true;
+} */
 
 $(document).on('click', function() {
 	hidePopups();
