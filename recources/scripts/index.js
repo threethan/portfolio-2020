@@ -4,6 +4,10 @@ var prevPage, prevPrevPage;
 
 const PAGE_NAMES = ['designer', 'developer', 'mentor'];
 
+if (navigator.appName == 'Microsoft Internet Explorer' ||  !!(navigator.userAgent.match(/Trident/) || navigator.userAgent.match(/rv:11/)) || (typeof $.browser !== "undefined" && $.browser.msie == 1)) {
+	alert("Internet Explorer is not supported by this website. Consider using a newer browser such as Mozilla Firefox. Trust me, you won't regret it.");
+}
+
 $(document).ready( function() {
 	switchPage(defaultPage);
 	//updateParallax();
