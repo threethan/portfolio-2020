@@ -34,26 +34,25 @@
 	box-shadow: 0 0 20px 0 #0005
 	z-index: 4
 
+#top-nav, #nav-dd
 	-webkit-user-select: none  /* Chrome all / Safari all */
 	-moz-user-select: none     /* Firefox all */
 	-ms-user-select: none      /* IE 10+ */
 	user-select: none          /* Likely future */
 	/* box-shadow: inset 0 -20px 20px -20px #0005 */
-
 	background: var(--text-background)
 
-#top-nav img,h1
-	height: 50px
-	line-height: 50px
-	display: inline-block
-	vertical-align: middle
-	color: var(--text-color)
-	padding: 10px 5px
-	margin: 0
-
-#top-nav h1
-	font-size: 50px
-	color: var(--text-color)
+	img,h1
+		height: 50px
+		line-height: 50px
+		display: inline-block
+		vertical-align: middle
+		color: var(--text-color)
+		padding: 10px 5px
+		margin: 0
+	h1
+		font-size: 50px
+		color: var(--text-color)
 
 #nav-menu
 	color: var(--accent-color)
@@ -72,12 +71,14 @@
 	margin-top: 16px
 
 #nav-dd
-	transition-duration: 0.3s
+	//transition-duration: 0.3s
 	display: flex
 	flex-flow: column
 	position: fixed
-	left: calc(var(--page-padding) + 449px)
+	left: calc(var(--page-padding) + 400px)
 	top: 2px
+	margin-left: -10px
+	margin-top: 1px
 	background: var(--text-background)
 	box-shadow: 0 0 10px 0 #0005
 	border-radius: 7px
@@ -178,9 +179,31 @@
 	background: white
 
 
-@media screen and (max-width: 1200px)
-	#top-nav h1
-		font-size: 30pt
+@media screen and (max-width: 1175px)
+	#top-nav, #nav-dd
+		h1, a
+			font-size: 30pt
+		.nav-dd-option
+			height: 30pt
+			line-height: 25pt
+	#nav-dd
+		margin-top: -2px
+
+@media screen and (max-width: 700px)
+	#top-nav, #nav-dd
+		h1, a
+			font-size: 20pt
+		.nav-dd-option
+			height: 20pt
+			line-height: 7.5pt
+
+	#nav-dd
+		margin-top: -5px
+
+@media screen and (max-width: 450px)
+	#top-nav, #nav-dd
+		h1, a
+			font-size: 15pt
 
 
 @media screen and (max-width: 900px)
@@ -190,16 +213,8 @@
 
 
 @media screen and (max-width: 700px)
-	#top-nav h1
-		font-size: 20pt
-
 	:root
 		--arrow-size: 7px
 
 	#nav-menu-arrow
 		margin-top: 19px
-
-
-@media screen and (max-width: 450px)
-	#top-nav h1
-		font-size: 15pt

@@ -28,9 +28,9 @@ $(window).resize( function() {
   updateSbWidth();
 });
 function updateSbWidth() {
-	outerWidthTemp = $(".no-scrollbar-parent").first().outerWidth();
-	innerWidthTemp = $("#sb-test-inner" ).first().width();
-	$(":root").css("--sb-width", innerWidthTemp - outerWidthTemp + "px");
+	outerWidthTemp = $('.no-scrollbar-parent').first().outerWidth();
+	innerWidthTemp = $('#sb-test-inner').first().width();
+	$(':root').css('--sb-width', innerWidthTemp - outerWidthTemp + 'px');
 
 }
 
@@ -62,7 +62,11 @@ $(document).on('click', function() {
 
 
 function showDd() {
-	$('#nav-dd').removeClass('hidden');
+	nddTemp = $('#nav-dd')
+	$(nddTemp).removeClass('hidden');
+	posTemp = $('#nav-menu-text').position();
+	$(nddTemp).css("top" , posTemp.top );
+	$(nddTemp).css("left", posTemp.left);
 }
 
 function hidePopups() {
