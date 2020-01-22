@@ -7,4 +7,4 @@ function updateSb() {
 
 // Calls updateSb when needed
 $(document).ready( function() { updateSb(); }); //On page load
-$(window).resize( function()  { updateSb(); }); //On resize
+$(window).resize(  function() { updateSb(); }); //On resize
