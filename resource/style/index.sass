@@ -5,9 +5,9 @@
 .left-arrow
 	position: relative
 	top: calc(var(--top-bar-height) / 2 - 12.5px)
-  width: 27px
-  height: 6px
-  margin: 10px
+	width: 27px
+	height: 6px
+	margin: 10px
 	background-color: var(--text-color)
 	float: left
 
@@ -16,11 +16,11 @@
 	top: -20px
 	left: -10px
 	content: ""
-  width: 20px
-  height: 20px
-  border-width: 6px 0 0 6px
-  border-style: solid
-  margin: 10px
+	width: 20px
+	height: 20px
+	border-width: 6px 0 0 6px
+	border-style: solid
+	margin: 10px
 	transform: rotate(-45deg)
 	border-color: var(--text-color)
 
@@ -192,6 +192,17 @@
 @media screen and (max-width: 700px)
 	#top-nav, #nav-dd
 		h1, a
+			font-size: 25pt
+		.nav-dd-option
+			height: 20pt
+			line-height: 10pt
+
+	#nav-dd
+		margin-top: 1px
+
+@media screen and (max-width: 500px)
+	#top-nav, #nav-dd
+		h1, a
 			font-size: 20pt
 		.nav-dd-option
 			height: 20pt
@@ -200,10 +211,15 @@
 	#nav-dd
 		margin-top: -5px
 
-@media screen and (max-width: 450px)
+@media screen and (max-width: 425px)
 	#top-nav, #nav-dd
 		h1, a
 			font-size: 15pt
+		.nav-dd-option
+			height: 12pt
+			line-height: 0pt
+			margin-top: -4px
+			background: none !important
 
 
 @media screen and (max-width: 900px)

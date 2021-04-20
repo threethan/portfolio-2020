@@ -1,0 +1,1 @@
+This repo holds & hosts my personal github pages website, https://ethanmakes.website

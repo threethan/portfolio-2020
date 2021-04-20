@@ -5,22 +5,22 @@ const PAGE_NAMES = ['designer', 'developer', 'mentor'];
 
 // Check for legacy versions of Internet Explorer
 if (navigator.appName == 'Microsoft Internet Explorer' ||  !!(navigator.userAgent.match(/Trident/) || navigator.userAgent.match(/rv:11/)) || (typeof $.browser !== "undefined" && $.browser.msie == 1)) {
-	alert("Internet Explorer is not supported by this website. Consider using a newer browser such as Mozilla Firefox. Trust me, you won't regret it.");
+	alert("Internet Explorer is not supported by this website, and much of the modern web. Consider using a newer browser such as Mozilla Firefox or Google Chrome.");
 }
 
 // Setup
 $(document).ready( function() {
 	switchPage(defaultPage); //Display the default page
-  $('#nav-menu-text').html(PAGE_NAMES[defaultPage]); //Update the dropdown indicator with the current page name
+	$('#nav-menu-text').html(PAGE_NAMES[defaultPage]); //Update the dropdown indicator with the current page name
 
-	// Interactable image setup
-  $('img.pop').click( function() {
-    $('#popup-img-img').prop('src', $(this).prop('src') );
-    $('#popup-img-back').removeClass('no-img');
-  });
-  $('#popup-img-back').click( function() {
-    $('#popup-img-back').addClass('no-img');
-  });
+		// Interactable image setup
+	$('img.pop').click( function() {
+		$('#popup-img-img').prop('src', $(this).prop('src') );
+		$('#popup-img-back').removeClass('no-img');
+	});
+	$('#popup-img-back').click( function() {
+		$('#popup-img-back').addClass('no-img');
+	});
 });
 
 // Opens the page selection dropdown

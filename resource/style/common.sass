@@ -2,7 +2,7 @@
 /* CSS Document */
 @font-face
 	font-family: LemonMilk
-	src: url(../fonts/lemonmilk/LemonMilk.otf)
+	src: url(../../font/lemonmilk/LemonMilk.otf)
 
 
 \:root
@@ -16,7 +16,7 @@
 	--text-background: #FFF
 	--page-padding: 20%
 	@media screen and (max-width: 700px)
-		--page-padding: 5%
+		--page-padding: 20px
 	font-family: lato, sans-serif
 	overflow: hidden
 
@@ -145,13 +145,20 @@ img.pop
 	margin-bottom: 15px
 	box-shadow: 0 0 10px 0 #0003
 	opacity: 0.5
+	@media screen and (max-width: 700px)
+		margin-right: 0
+		margin-bottom: 0
+		border-radius: 0
+		opacity: 1.0 !important
+		width: calc(50vw - 20px)
+		box-shadow: none
 
 img.pop:hover
 	box-shadow: 0 0 10px 0 #0006
 	opacity: 1
 
 #popup-img-back
-	transition-duration: 0.5s
+	transition-duration: 0.25s
 	z-index: 10
 	position: fixed
 	top: 0
@@ -163,7 +170,7 @@ img.pop:hover
 	line-height: 100%
 
 #popup-img-img
-	transition-duration: 0.5s
+	transition-duration: 0.35s
 	position: relative
 	display: inline-block
 	max-height: 60%
@@ -171,10 +178,10 @@ img.pop:hover
 	max-width: 90%
 	box-shadow: 0 0 10px 0 #0009
 	border-radius: 10px
+	transform: scale(1.0)
 
 .no-img #popup-img-img
-	max-height: 10%
-
+	transform: scale(0.2)
 
 #popup-img-back:not(.no-img)
 	pointer-events: all
@@ -190,3 +197,10 @@ img.pop:hover
 	clear:both
 	height: 0
 	margin-bottom: -11px
+
+.mobile-hide
+	@media screen and (max-width: 700px)
+		display: none !important
+.mobile-only
+	@media screen and (min-width: 700px)
+		display: none !important
